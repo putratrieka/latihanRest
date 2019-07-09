@@ -19,7 +19,7 @@ import com.eksad.latihanrest.model.Brand;
 @RequestMapping("brand")
 public class BrandController {
 	@Autowired
-	BrandDao brandDao;
+	private BrandDao brandDao;
 	
 	@RequestMapping("getAll")
 	public List<Brand> getAll(){

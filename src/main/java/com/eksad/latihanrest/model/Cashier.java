@@ -13,9 +13,9 @@ import lombok.ToString;
 @EqualsAndHashCode(callSuper = true)
 @ToString(callSuper = true)
 @Entity
-@DiscriminatorValue("Chasier")
+@DiscriminatorValue("Cashier")
 
-public class Chasier extends Person {
+public class Cashier extends Person {
 	@Column(name = "shift")
 	private String shift;
 }
