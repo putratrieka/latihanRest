@@ -7,6 +7,7 @@ import javax.persistence.MapsId;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.ToString;
 
@@ -15,6 +16,7 @@ import lombok.ToString;
 @Table(name = "person_address")
 
 public class PersonAddress {
+	
 	@Id
 	@Column(name = "person_id")
 	private Long id;

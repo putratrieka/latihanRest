@@ -7,6 +7,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -29,9 +30,13 @@ public class Brand extends BaseEntity{
 //	@GeneratedValue(strategy =  GenerationType.IDENTITY) // auto increment
 //	private Long id; // dikomen karna sudah didefine di class BaseEntity
 	
+	@ApiModelProperty(
+			value = "Brand Name",
+			required = true)
 	@Column(nullable = false)// not null
 	private String name;
 	
+	@ApiModelProperty(value = "Type of Product")
 	@Column(name = "product_type")
 	private String productType;
 }

@@ -12,6 +12,7 @@ import javax.persistence.InheritanceType;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
 @Data
@@ -21,6 +22,7 @@ import lombok.Data;
 @DiscriminatorColumn(name = "type")
 
 public class Person {
+	@ApiModelProperty(value = "Person ID (Primary Key)")
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;

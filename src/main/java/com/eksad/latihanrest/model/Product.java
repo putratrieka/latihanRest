@@ -16,6 +16,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
 @Data
@@ -39,13 +41,20 @@ public class Product {
 	@JoinColumn(name = "brand_id")
 	private Brand brand;
 	
+	@ApiModelProperty(
+			value = "Product Name",
+			required = true)
 	@Column(nullable = false)
 	private String name;
 	
+	@ApiModelProperty(
+			value = "Product Price",
+			required = true)
 	@Column(nullable = false)
 	private BigDecimal price;
 	
 	
+	@ApiModelProperty(value = "Brand ID")
 	@Transient // agar tidak dibaca sebagai kolom di database
 	private Long brandId;
 //	
