@@ -1,6 +1,7 @@
 package com.eksad.latihanrest.controller;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,6 +36,15 @@ public class UserController {
 	
 	@Autowired
 	private UsersDao usersDao;
+	
+	
+	@RequestMapping("")
+	public HashMap<String, Object> user(){
+		
+		HashMap<String, Object> map  = new HashMap<String, Object>();	
+		map.put("Message", "Masuk Sebagai User");	
+		return map;
+	}
 	
 	@PostMapping("users/save")
 	public Users save(@RequestBody Users user) {

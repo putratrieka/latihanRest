@@ -51,6 +51,14 @@ public class AdminController {
 		return usersDao.save(user);
 	}
 	
+	@RequestMapping("")
+	public HashMap<String, Object> admin(){
+		
+		HashMap<String, Object> map  = new HashMap<String, Object>();	
+		map.put("Message", "Masuk Sebagai Admin");	
+		return map;
+	}
+	
 	@DeleteMapping("delete/{id}")
 	public String delete(@PathVariable int id) {
 		usersDao.deleteById(id);
