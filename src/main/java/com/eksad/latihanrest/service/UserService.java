@@ -15,7 +15,7 @@ import com.eksad.latihanrest.dao.UsersDao;
 import com.eksad.latihanrest.model.Users;
 
 @Service
-public class userService implements UserDetailsService{
+public class UserService implements UserDetailsService{
 	
 	@Autowired
 	UsersDao usersDao;

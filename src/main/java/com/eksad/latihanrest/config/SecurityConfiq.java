@@ -10,18 +10,20 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
-import com.eksad.latihanrest.service.userService;
+import com.eksad.latihanrest.service.UserService;
 
 @Configuration
 @EnableWebSecurity
 public class SecurityConfiq extends WebSecurityConfigurerAdapter{
 	
 	@Autowired
-	private userService userService;
+	private UserService userService;
 	
 	@Override
 	protected void configure(HttpSecurity htttp) throws Exception{
-		htttp.httpBasic().and().authorizeRequests()
+		htttp.httpBasic().and()
+			.csrf().disable()
+			.authorizeRequests()
 			.antMatchers("/admin/**").hasAnyAuthority("ADMIN")
 			.antMatchers("/user/**").hasAnyAuthority("ADMIN","USER")
 			.and().formLogin().permitAll();
