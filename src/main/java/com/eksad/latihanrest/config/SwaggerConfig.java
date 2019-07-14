@@ -32,8 +32,10 @@ public class SwaggerConfig {
 				.tags(
 						new Tag("Product", "Product Management API"),
 						new Tag("Brand", "Brand Management API"),
-						new Tag("Data Manipulation API", ""),
-						new Tag("Get Data API", "")
+						new Tag("Data Manipulation API", " "),
+						new Tag("Get Data API", " "),
+						new Tag("Admin", " "),
+						new Tag("User", " ")
 						);	
 	}
 	

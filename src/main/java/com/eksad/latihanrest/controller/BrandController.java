@@ -74,9 +74,11 @@ public class BrandController {
 			notes = "Update brand's data based on provide ID and attached data",
 			tags = "Data Manipulation API"
 			)
-	@PutMapping(value = "update/{id}")
+	@RequestMapping(value = "update/{id}", method = RequestMethod.PUT)
 	public Brand update(@RequestBody Brand brand, @PathVariable Long id) {
 		Brand brandSelected = brandDao.findById(id).orElse(null);
+		System.out.println("brandSelected");
+		System.out.println(brandSelected);
 		if (brandSelected != null) {
 			brandSelected.setName(brand.getName()); 
 			brandSelected.setProductType(brand.getProductType());

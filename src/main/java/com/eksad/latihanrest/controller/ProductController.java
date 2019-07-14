@@ -67,7 +67,7 @@ public class ProductController {
 			notes = "Add new product to database",
 			tags = "Data Manipulation API"
 			)
-	@PostMapping(value = "save")
+	@PostMapping("save")
 	public Product save(@RequestBody Product product) {	
 		Brand brand = brandDao.findById(product.getBrandId()).orElse(null);
 		
@@ -88,7 +88,7 @@ public class ProductController {
 			notes = "Update product's data based on provide ID and attached data",
 			tags = "Data Manipulation API"
 			)
-	@PutMapping(value = "update/{id}")
+	@PutMapping("update/{id}")
 	public Product update(@RequestBody Product product, @PathVariable Long id) {
 		Product productSelected = productDao.findById(id).orElse(null);
 		if (productSelected != null) {
@@ -107,7 +107,7 @@ public class ProductController {
 			notes = "Delete product's data based on provide ID and attached data",
 			tags = "Data Manipulation API"
 			)
-	@DeleteMapping(value = "delete/{id}")
+	@DeleteMapping("/delete/{id}")
 	public HashMap<String, Object> delete(@PathVariable	Long id){
 		HashMap<String, Object> result = new HashMap<String, Object>();
 		productDao.deleteById(id);
@@ -121,7 +121,7 @@ public class ProductController {
 			notes = "Return data with JSON format",
 			tags = "Get Data API"
 			)
-	@GetMapping(value = "search/{name}")
+	@GetMapping("search/{name}")
 	public List<Product> getByName(Product product, @PathVariable String name) {
 		List<Product> result = new ArrayList<Product>();
 		productDao.searchByName(name).forEach(result::add);
